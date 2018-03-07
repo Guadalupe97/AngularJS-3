@@ -24,11 +24,8 @@
             <h1>$HTTP Request</h1>
             <h4>Data dinámica</h4>
             <hr>
-            
-
-                {{ profesores | json}}
-
-
+                <!--se pone una variable que se crea en el archivo app.js-->
+                <div ng-include="tablaProfesores"></div>
 
         </div><!-- fin del listadoCtrl -->
 
