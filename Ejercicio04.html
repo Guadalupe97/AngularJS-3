@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app = "App3">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<title>NG-REPEAT -ng-repeat</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/app3.js"></script>
+	<style>
+		.avatar{
+			width: 85px;
+			height: 85px; 
+			border-radius: 50%;
+
+		}
+		.puntero{
+			cursor: pointer;
+		}
+	</style>
+
+</head>
+<body>
+	<div class = "container" ng-controller = "listadoCtrl2">
+		
+		<h1>ng-repeat</h1>
+		<h4>Manejando repeticiones con flitros</h4>
+		<hr>
+
+		<div class = "row">
+			Búsqueda:
+			<br>
+			<input type="text" name="busqueda" ng-model="busqueda.nombre" class="form-control" placeholder="Buscar.">
+			<br>
+
+			Sexo:
+			<br>
+			<select ng-model="busqueda.sexo" class="form-control">
+				<option value="">Todos</option>
+				<option value="Mujer">Mujeres</option>
+				<option value="Hombre">Hombre</option>
+			</select>
+		</div>
+		<hr>
+		<table class="table table-hover">
+			<tr>
+				<th>Avatar</th>
+				<th><a class = "puntero" ng-click = "columna = 'nombre'; reverse = !reverse;">Nombre</a></th>
+				<th><a class= "puntero" ng-click = "columna = 'sexo'; reverse = !reverse;">Sexo</th>
+				<th>Teléfono</th>
+				<th>Celular</th>
+			</tr>
+			<!--se agrega la tuberia y el filter-->
+			<tr ng-repeat = "persona in personas |filter:busqueda | orderBy:columna:reverse">
+				<td><img ng-src="img/{{persona.avatar}}" class="avatar"></td>
+				<td>{{persona.nombre}}</td>
+				<td>{{persona.sexo}}</td>
+				<td>{{persona.telefono}}</td>
+				<td>{{persona.celular}}</td>
+			</tr>
+		</table> 
+				
+	</div>
+</body>
+</html>
