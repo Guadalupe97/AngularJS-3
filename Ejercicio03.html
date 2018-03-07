@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app = "uniApp">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<title>NG-REPEAT -ng-repeat</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/app2.js"></script>
+
+</head>
+<body>
+	<div class = "container" ng-controller = "listadoCtrl">
+		
+		<h1>ng-repeat</h1>
+		<h4>Manejando repeticiones</h4>
+		<hr>
+
+		<!--filtro json-->
+		<ul>
+			<li ng-repeat = "nombre in listado">
+				{{nombre}}
+			</li>
+		</ul>
+		<hr>
+		<table class="table table-striped">
+			<tr>
+				<th>Nombre</th>
+				<th>Edad</th>
+				<th>Materia</th>
+			</tr>
+			<tr ng-repeat = "profesor in listadoProfesores.profesores">
+				<td>{{profesor.nombre}}</td>
+				<td>{{profesor.edad}}</td>
+				<td>{{profesor.materia}}</td>
+			</tr>
+		</table>
+		<ul>
+			<li ng-repeat = "numero in [1,2,3,4,5,6,7,8,9,10]">
+				2 * {{numero}} = {{2 * numero}} 
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
