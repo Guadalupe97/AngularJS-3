@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--Agregar directiva de angular-->
+<html ng-app>
+<head>
+	<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8/">
+
+	<!--Incluir Bootstrap-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!--Incluir AngularJS-->
+	<script src="js/lib/angular.min.js"></script>
+
+	<title>Ejercicio 1</title>
+</head>
+<body>
+<div class="container">
+	<h1>Evaluación</h1>
+	<h4>AngularJS 01</h4>
+	<hr>
+
+	Nombre completo: 
+	<br>
+	<!--Autofocus es para que al cargar la pagina el curso aparezca automaticamente en donde se debe escribir-->
+	<input type="text" name="nombre" ng-model="nombre" class="form-control" placeholder="Escriba su nombre" autofocus="">
+	<br>
+	Lugar de Trabajo: 
+	<input type="text" name="trabajo" ng-model="trabajo" class="form-control" placeholder="Escriba su lugar de trabajo">
+	<br>
+	Salario en dólares:
+	<input type="text" name="salario" ng-model="salario" class="form-control" placeholder="Escriba su salario">
+	<hr>
+	Nombre: {{nombre | uppercase}}
+	<br>
+	Lugar de trabajo: {{trabajo | lowercase}}
+	<br>
+	Salario en dólares: {{salario | currency}}
+</div>
+</body>
+</html>
