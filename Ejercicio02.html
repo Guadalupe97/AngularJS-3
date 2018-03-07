@@ -14,10 +14,10 @@
 
     </head>    
     <body>
-
+        <!--Cuando se usa scope ya no es necesario hacer referencia al controlador.-->
         <div class="container" ng-controller="profesorCtrl as profe">
             <h1>Profesor</h1>
-            <h4> {{profe.profesor.nombre}}</h4>
+            <h4> {{profesor.nombre}}</h4>
             <hr>
 
              <div class="row">
@@ -26,7 +26,7 @@
              <div class="col-sm-3">
                 <section class="panel">
                      <div class="panel-body" align="center">
-                         <img ng-src= "{{profe.profesor.foto}}" class="img-responsive img-circle" alt="" width="150px" height="150px">
+                         <img ng-src= "{{profesor.foto}}" class="img-responsive img-circle" alt="" width="150px" height="150px">
                      </div>
                  </section>
             </div>
@@ -35,19 +35,38 @@
             <div class="col-sm-9">
                 <section class="panel">
                      <div class="panel-body">
-                        {{profe.profesor.bio}}
+                        {{profesor.bio}}
                             <br>
                             <br>
-                                <strong>Edad:</strong> {{profe.profesor.edad}}
+                                <strong>Edad:</strong> {{profesor.edad}}
+                                <hr>
+                                <!--ng-click recibe una expresion/llama una función angular de -->
+                                <button class="btn btn-primary" ng-click ="editarprofesor()">Editar</button>
                      </div>
                 </section>
-            </div>
+                </div>
+            </div>            
 
-
-</div>            
-
-
-            
+                <div class ="row">
+                    <div class ="col-sm-9">
+                        <div class="panel">
+                            <div class="panel-body}">
+                                
+                                Nombre:
+                                <input type="text" name="nombre" class="form-control" ng-model="editando.nombre">
+                                <br>
+                                Edad:
+                                <input type="text" name="edad" class="form-control" ng-model="editando.edad">
+                                <br>
+                                Biografía:
+                                <textarea name="bio" class="form-control" ng-model="editando.bio" rows="8"></textarea>
+                                <hr>
+                                <button class="btn btn-success" ng-click="guardarcambios()">Guardar cambios</button>
+                                <button class="btn btn-danger" ng-click="cancelar()">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
            
         </div>
 
