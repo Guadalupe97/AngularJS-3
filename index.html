@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--Agregar directiva de angular-->
+<html ng-app>
+<head>
+	<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8/">
+
+	<!--Incluir Bootstrap-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!--Incluir AngularJS-->
+	<script src="js/lib/angular.min.js"></script>
+
+	<title>Hola Mundo Angular JS</title>
+</head>
+<body>
+<div class="container">
+	
+	<!--<h1>{{"Hola Mundo desde AngularJS"}}</h1>-->
+
+	<h1>Filtros</h1>
+	<h4>en AngularJS</h4>
+	<hr>
+	<p>
+		Filtro de texto: {{"FerNandO"}}
+		<br>
+		<!-- Texto en mayusculas-->
+		Filtro de texto: {{"FerNandO" | uppercase}}
+		<br>
+		<!-- Texto en minusculas-->
+		Filtro de texto: {{"FerNandO" | lowercase}}
+		</p>
+
+		<p>
+			Filtro de moneda: {{1350}}
+			<br>
+			Filtro de moneda: {{1350 | currency}}
+			<br>
+			Filtro de moneda: {{1350 | currency: ''}}
+		</p>
+
+		<p>
+			Filtro de numero: {{1350000}}
+			<br>
+			Filtro de numero: {{1350000 | number}}
+		</p>
+
+
+
+</div>
+</body>
+</html>
