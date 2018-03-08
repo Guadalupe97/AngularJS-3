@@ -2,16 +2,20 @@
 <h4>{{alumno.nombre}}</h4>
 <hr>
 
-<divc lass="row">
+<div class="row">
 	<!--enviar la informacion-->
 	<form ng-submit="guardarAlumno()">
+
+		<div ng-hide = "creando">
 	Código:
 	<br>
 	<input type="text" name="codigo" class="form-control" ng-model = "alumno.codigo" readonly="readonly">
 	<br>
+  </div>
+
 	Nombre: 
 	<br>
-	<input type="text" name="nombre" class="form-control" ng-model = "alumno.nombre" required>
+	<input type="text" name="nombre" class="form-control" ng-model = "alumno.nombre" placeholder="Numbre del alumno" required>
 	<br>
 	Teléfono:
 	<br>
@@ -20,7 +24,7 @@
 	<br>
 	Dirección:
 	<br>
-	<textarea class="form-control" ng-model="alumno.direccion" rows="5" required></textarea>
+	<textarea class="form-control" ng-model="alumno.direccion" rows="5" placeholder="Dirección del alumno" required></textarea>
 	<hr>
 	<button type="submit" class="btn btn-success">Guardar cambios</button>
 	<br><br>
