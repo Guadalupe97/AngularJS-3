@@ -1,8 +1,10 @@
-var app = angular.module('universidadApp',['ngRoute']);
+var app = angular.module('universidadApp',['ngRoute','ui.mask']);
 
 app.controller('mainCtrl', ['$scope','$http', function($scope,$http){
   
 	$scope.menuSuperior = 'parciales/menu.html';
+	//propia mascara
+	//$scope.telefonoMask = "(99)99-99-99-99";
 
 
 	$scope.setActive = function(Opcion){

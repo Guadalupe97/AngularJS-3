@@ -2,6 +2,8 @@ app.controller('alumnoCtrl', ['$scope', '$routeParams', '$http', function($scope
 	$scope.setActive("mAlumnos");
 	var codigo = $routeParams.codigo;
 
+	$scope.actualizado = false;
+
 	$scope.alumno = {};
 
 	$http.get('php/servicios/alumnos.getAlumno.php?c=' + codigo).success(function(data){
@@ -12,6 +14,26 @@ app.controller('alumnoCtrl', ['$scope', '$routeParams', '$http', function($scope
 		}	
 		$scope.alumno = data;
 	});
+
+	//crear funcion para porcesar la informacion
+	$scope.guardarAlumno = function(){
+
+		//alert("Bien");
+
+		$http.post('php/servicios/alumnos.guardar.php', $scope.alumno).success(function(data){
+
+			if (data.err === false){
+			$scope.actualizado = true;
+
+			setTimeout(function(){
+				$scope.actualizado = false;
+				//decir a angular que se actualice
+				$scope.$apply();
+			}, 3500);
+		};
+		
+		});
+	}
 
 }]);
 
