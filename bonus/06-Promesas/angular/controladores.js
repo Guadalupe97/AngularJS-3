@@ -1,8 +1,38 @@
 var app = angular.module('promesaApp.controladores', []);
 
-app.controller('mainCtrl', ['$scope', '$q', function ($scope, $q) {
+app.controller('personasCtrl', ['$scope', 'personas', function ($scope, personas) {
+
+	$scope.personas = personas;
+
+
+}]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
-	$scope.miVar = 0;
+	/*$scope.miVar = 0;
 
 	$scope.suma = function(num){
 
@@ -39,7 +69,4 @@ app.controller('mainCtrl', ['$scope', '$q', function ($scope, $q) {
 					console.error(error);
 					$scope.miVar = "Error!!!";
 				}
-
-			)
-
-}]);
+}]);*/

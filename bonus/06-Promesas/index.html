@@ -6,15 +6,18 @@
 	<script src="js/lib/angular.min.js"></script>
 	<script src="angular/app.js"></script>
 	<script src="angular/controladores.js"></script>
+	<script src="angular/servicios.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
-	<div ng-controller = "mainCtrl">
+	<div class="container" ng-controller = "personasCtrl">
 		<!--promesas--
 		Decirle a angular ejecuta este proceso mientras yo sigo con el flujo normal, y angular avise si se hizo correctamente-->
 
-
-
-		{{miVar}}
+		<h1>Servicios</h1>
+		<hr>
+		<pre>{{personas | json}}</pre>
 
 	</div>
 </body>
