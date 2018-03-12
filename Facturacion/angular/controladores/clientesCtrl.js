@@ -10,6 +10,7 @@ app.controller('clientesCtrl', ['$scope','$routeParams', 'Clientes', function($s
 
 	$scope.activar('mClientes','','Clientes','listado');
 	$scope.clientes = {};
+	$scope.clienteSel = {};
 
 
 	$scope.moverA = function( pag ){
@@ -25,4 +26,31 @@ app.controller('clientesCtrl', ['$scope','$routeParams', 'Clientes', function($s
 
 
 
-}]);
+	$scope.mostrarModal = function(cliente, frmCliente){
+
+		angular.copy(cliente, $scope.clienteSel);
+
+		$("#modal_cliente").modal();
+	}
+
+	//Funcion para guardar
+
+	$scope.guardar = function(cliente){
+
+		Clientes.guardar(cliente).then(function(){
+
+			//codigo cuando se actualice
+			$("#modal_cliente").modal('hide');
+
+			//el formulario vuelve a su estado original
+			//frmCliente.autoValidateFormOptions.resetForm();
+			
+
+		});
+
+	}
+
+
+
+
+}]);	
