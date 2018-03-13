@@ -1,0 +1,14 @@
+{
+
+	"version":"1.0.0",
+	"aplicativo": "facturación",
+	"iniciales":"BETA",
+	"autor":"Maria Guadalupe",
+	"anio": 2018,
+	"web": "http://www.tucancode.com",
+	"empresa":"Tucancode",
+	"correo":"lumoranmtz@gmail.com",
+	"telefono":"(504) 2233-3212",
+	"direccion": "Avenida XYZ, 300mts norte de la calle 123",
+	"ISV": 0.12
+}
